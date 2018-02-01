@@ -12,6 +12,7 @@ var words = [
   "Harpos"
 
 ];
+
 var currentLetters = [];
 var currentWord = "";
 var blanks = 0;
@@ -28,10 +29,10 @@ var incorrectGuess = [];
 document.onkeyup = function (event) {
   var alphabet = String.fromCharCode(event.which).toLocaleLowerCase();
   console.log(alphabet);
-
+  checkLetters(alphabet);
 }
 
-document.getElementById("start").onkeyup
+// document.getElementById("start").onkeyup
 
 function start() {
   numGuesses = 8;
@@ -61,6 +62,7 @@ function checkLetters(letter) {
   for (var i = 0; i < blanks; i++) {
     if (currentWord[i] == letter) {
       letterInWord = true;
+      document.getElementById("currentWord").innerHTML = "Find the missing letters:" + blanksAndSuccess.join(" ");
     }
   }
   if (letterInWord) {
@@ -75,6 +77,9 @@ function checkLetters(letter) {
   } else {
     incorrectGuess.push(letter);
     numGuesses--;
+    document.getElementById("guessesRemaining").innerHTML = "Guesses left: " + numGuesses;
+    document.getElementById("guessed").innerHTML = "Letters already gussed: " + incorrectGuess.join(" ");
+
     console.log("that was incorrect " + numGuesses + " are remaining");
   }
 }
@@ -96,7 +101,7 @@ function round() {
 
     // Update the win counter in the HTML
     document.getElementById("winCounter").innerHTML = "You have won " + winCounter + " game(s)";
-    startGame(); // restart the game 
+    start(); // restart the game 
   }
 
   // If we've run out of guesses
@@ -108,10 +113,9 @@ function round() {
 
     // Update the loss counter in the HTML
     document.getElementById("lossCounter").innerHTML = "You have lost " + lossCounter + " game(s)";
-    startGame(); // restart the game
+    start(); // restart the game
   }
 }
 
-//Making the stuff run
-//Calling the startGame function
-startGame();
+//Calling the start function
+start();
