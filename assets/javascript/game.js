@@ -2,14 +2,14 @@
 // create an array of words
 
 
-var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
-  'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-  't', 'u', 'v', 'w', 'x', 'y', 'z'];
+// var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
+//   'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+//   't', 'u', 'v', 'w', 'x', 'y', 'z'];
 var words = [
-  "Harry's",
-  "Kelly's",
-  "Tiki Cat",
-  "Harpos"
+  "harrys",
+  "kellys",
+  "tikiCat",
+  "harpos"
 
 ];
 
@@ -17,6 +17,7 @@ var currentLetters = [];
 var currentWord = "";
 var blanks = 0;
 var blanksAndSuccess = [];
+var lossCounter = 0;
 var winCounter = 0;
 var numGuesses = 7;
 // array for gussed letters
@@ -26,10 +27,20 @@ var correctLetter = [];
 // guessed letters that are incorrect
 var incorrectGuess = [];
 
+var isAlpha = function(ch){
+  return typeof ch === "string" && ch.length === 1
+         && (ch >= "a" && ch <= "z" || ch >= "A" && ch <= "Z");
+}
+
+
 document.onkeyup = function (event) {
-  var alphabet = String.fromCharCode(event.which).toLocaleLowerCase();
-  console.log(alphabet);
-  checkLetters(alphabet);
+  if (isAlpha(event.key)) {
+  var guess = String.fromCharCode(event.which).toLocaleLowerCase();
+  console.log(guess);
+  checkLetters(guess);
+  round(words);
+  }
+ 
 }
 
 // document.getElementById("start").onkeyup
