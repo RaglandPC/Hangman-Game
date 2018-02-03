@@ -6,48 +6,55 @@
 
     <title> HangMan Game</title>
     <meta charset="UTF-8">
-   
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-   
 
- 
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+
 
 </head>
 
 
 <body>
-    
+    <div class="page-header">
     <h1>HangMan Game</h1>
-    <div class="container" >
-    <div class="row">
-    <div class="col-md-4"></div>
-    <div class="col-md-4">
-    <b><p id="start">Press any key the start</p></b>
-    <h3>Bar's in Kansas City</h3>
-    <p id="currentWord"> find missing letters:</p>
-    
-    <p id="guessesRemaining">Number of Guesses Remaining:</p>
-    
-    <p id="guessed">Letters Already Guessed:</p>
-    
-    <p id="winCounter">Wins:</p>
-    
-    <p id="lossCounter">Losses:</p>
-    <p id="word"></p>
-    <div id="alphabet">
-        <h3>Make a guess</h3>
     </div>
-    </div>
-    </div>
-    </div>
-    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <b>
+                    <p id="start">Press any key the start</p>
+                </b>
+                <h3>Bars in Kansas City</h3>
+                <p id="currentWord"> find missing letters:</p>
 
-    
+                <p id="guessesRemaining">Number of Guesses Remaining:</p>
+
+                <p id="guessed">Letters Already Guessed:</p>
+
+                <p id="winCounter">Wins:</p>
+
+                <p id="lossCounter">Losses:</p>
+                <p id="word"></p>
+                <div id="alphabet">
+                    <h3>Make a guess</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <script src="assets/javascript/game.js"></script>
+    <footer>
+        <p>© 2017 Jaocb Ragland, All rights reserved 2017.</p>
+    </footer>
+
 </body>
 
 </html>
-
-      
