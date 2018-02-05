@@ -8,7 +8,7 @@
 var words = [
   "harrys",
   "kellys",
-  "tikiCat",
+  "tikicat",
   "harpos"
 
 ];
